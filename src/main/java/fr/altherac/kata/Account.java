@@ -8,6 +8,7 @@ public class Account {
     private BigDecimal balance = BigDecimal.ZERO;
 
     public void deposit(int amount, LocalDate date) {
+        balance = balance.add(BigDecimal.valueOf(amount));
     }
 
     public void withdraw(int amount, LocalDate date) {
