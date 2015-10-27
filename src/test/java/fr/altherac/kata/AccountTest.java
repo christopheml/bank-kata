@@ -23,6 +23,17 @@ public class AccountTest  {
         then_balance_should_be(account, 1000);
     }
 
+    @Test
+    public void given_a_new_bank_account_with_a_withdrawal_of_500_when_asking_balance_then_balance_should_be_minus_500() {
+        Account account = given_a_new_bank_account();
+        given_a_withdrawal_of(account, 500);
+        then_balance_should_be(account, -500);
+    }
+
+    private void given_a_withdrawal_of(Account account, int amount) {
+        account.withdraw(amount, LocalDate.now());
+    }
+
     private void given_a_deposit_of(Account account, int amount) {
         account.deposit(amount, LocalDate.now());
     }

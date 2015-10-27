@@ -12,6 +12,7 @@ public class Account {
     }
 
     public void withdraw(int amount, LocalDate date) {
+        balance = balance.subtract(BigDecimal.valueOf(amount));
     }
 
     public BigDecimal getBalance() {
