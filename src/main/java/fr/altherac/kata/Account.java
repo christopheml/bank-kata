@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Account {
+
+    private BigDecimal balance = BigDecimal.ZERO;
+
     public void deposit(int amount, LocalDate date) {
     }
 
@@ -11,6 +14,6 @@ public class Account {
     }
 
     public BigDecimal getBalance() {
-        return null;
+        return balance;
     }
 }
