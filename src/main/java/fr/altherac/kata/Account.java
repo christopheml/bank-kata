@@ -7,15 +7,16 @@ public class Account {
 
     private BigDecimal balance = BigDecimal.ZERO;
 
-    public void deposit(int amount, LocalDate date) {
-        balance = balance.add(BigDecimal.valueOf(amount));
+    public void deposit(Amount amount, LocalDate date) {
+        balance = balance.add(amount.getValue());
     }
 
-    public void withdraw(int amount, LocalDate date) {
-        balance = balance.subtract(BigDecimal.valueOf(amount));
+    public void withdraw(Amount amount, LocalDate date) {
+        balance = balance.subtract(amount.getValue());
     }
 
     public BigDecimal getBalance() {
         return balance;
     }
+
 }

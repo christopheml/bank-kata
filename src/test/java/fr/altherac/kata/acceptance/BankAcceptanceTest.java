@@ -1,6 +1,7 @@
 package fr.altherac.kata.acceptance;
 
 import fr.altherac.kata.Account;
+import fr.altherac.kata.Amount;
 import fr.altherac.kata.BankStatement;
 import org.junit.Test;
 
@@ -15,9 +16,9 @@ public class BankAcceptanceTest {
     @Test
     public void given_an_account_with_operations_when_generating_statement_then_statement_shows_all_operations() {
         Account account = new Account();
-        account.deposit(1000, LocalDate.of(2012, 1, 10));
-        account.deposit(2000, LocalDate.of(2012, 1, 13));
-        account.withdraw(500, LocalDate.of(2012, 1, 14));
+        account.deposit(Amount.of(1000), LocalDate.of(2012, 1, 10));
+        account.deposit(Amount.of(2000), LocalDate.of(2012, 1, 13));
+        account.withdraw(Amount.of(500), LocalDate.of(2012, 1, 14));
 
         BankStatement statement = new BankStatement(account);
         List<String> printedStatement =  statement.print();
