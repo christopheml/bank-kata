@@ -1,5 +1,6 @@
 package fr.altherac.kata;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Account {
@@ -7,5 +8,9 @@ public class Account {
     }
 
     public void withdraw(int amount, LocalDate date) {
+    }
+
+    public BigDecimal getBalance() {
+        return null;
     }
 }

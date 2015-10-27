@@ -1,5 +1,7 @@
-package fr.altherac.kata;
+package fr.altherac.kata.acceptance;
 
+import fr.altherac.kata.Account;
+import fr.altherac.kata.BankStatement;
 import org.junit.Test;
 
 import java.time.LocalDate;
