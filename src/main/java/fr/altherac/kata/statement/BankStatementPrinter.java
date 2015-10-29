@@ -16,19 +16,19 @@ public class BankStatementPrinter extends BalanceAwareOperationVisitor {
     @Override
     public void visit(Deposit deposit) {
         super.visit(deposit);
-        String printed = String.format("%s || %s || || %s",
-                printableDateFormatter.printableDate(deposit.getDate()),
-                printableAmountFormatter.printableAmount(deposit.getAmount()),
-                printableAmountFormatter.printableAmount(getBalance()));
-        printedOutput.add(0, printed);
+        printOperation(deposit, "%s || %s || || %s");
     }
 
     @Override
     public void visit(Withdrawal withdrawal) {
         super.visit(withdrawal);
-        String printed = String.format("%s || || %s || %s",
-                printableDateFormatter.printableDate(withdrawal.getDate()),
-                printableAmountFormatter.printableAmount(withdrawal.getAmount()),
+        printOperation(withdrawal, "%s || || %s || %s");
+    }
+
+    private void printOperation(Operation operation, String lineFormat) {
+        String printed = String.format(lineFormat,
+                printableDateFormatter.printableDate(operation.getDate()),
+                printableAmountFormatter.printableAmount(operation.getAmount()),
                 printableAmountFormatter.printableAmount(getBalance()));
         printedOutput.add(0, printed);
     }
