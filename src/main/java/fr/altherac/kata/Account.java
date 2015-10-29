@@ -2,14 +2,12 @@ package fr.altherac.kata;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Account {
 
     private BigDecimal balance = BigDecimal.ZERO;
 
-    private final List<Operation> operations = new ArrayList<>();
+    private final Operations operations = new Operations();
 
     public void deposit(Amount amount, LocalDate date) {
         operations.add(new Deposit(amount, date));
@@ -25,7 +23,7 @@ public class Account {
         return balance;
     }
 
-    public List<Operation> getOperations() {
+    public Operations getOperations() {
         return operations;
     }
 }
