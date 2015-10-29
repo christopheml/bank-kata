@@ -5,7 +5,7 @@ import fr.altherac.kata.operation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BankStatementPrinter implements OperationVisitor {
+public class BankStatementPrinter extends BalanceAwareOperationVisitor {
 
     private final List<String> printedOutput = new ArrayList<>();
 
@@ -15,16 +15,22 @@ public class BankStatementPrinter implements OperationVisitor {
 
     @Override
     public void visit(Deposit deposit) {
-        String printableAmount = printableAmountFormatter.printableAmount(deposit.getAmount());
-        String printed = String.format("%s || %s || || %s", printableDateFormatter.printableDate(deposit.getDate()), printableAmount, printableAmount);
-        printedOutput.add(printed);
+        super.visit(deposit);
+        String printed = String.format("%s || %s || || %s",
+                printableDateFormatter.printableDate(deposit.getDate()),
+                printableAmountFormatter.printableAmount(deposit.getAmount()),
+                printableAmountFormatter.printableAmount(getBalance()));
+        printedOutput.add(0, printed);
     }
 
     @Override
     public void visit(Withdrawal withdrawal) {
-        String printableAmount = printableAmountFormatter.printableAmount(withdrawal.getAmount());
-        String printed = String.format("%s || || %s || -%s", printableDateFormatter.printableDate(withdrawal.getDate()), printableAmount, printableAmount);
-        printedOutput.add(printed);
+        super.visit(withdrawal);
+        String printed = String.format("%s || || %s || %s",
+                printableDateFormatter.printableDate(withdrawal.getDate()),
+                printableAmountFormatter.printableAmount(withdrawal.getAmount()),
+                printableAmountFormatter.printableAmount(getBalance()));
+        printedOutput.add(0, printed);
     }
 
     public void print(Operations operations) {
