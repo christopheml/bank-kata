@@ -2,12 +2,12 @@ package fr.altherac.kata.statement;
 
 import fr.altherac.kata.operation.*;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class BankStatementPrinter extends BalanceAwareOperationVisitor {
 
-    private final List<String> printedOutput = new ArrayList<>();
+    private final List<String> printedOutput = new LinkedList<>();
 
     private final PrintableDateFormatter printableDateFormatter = new PrintableDateFormatter();
 
