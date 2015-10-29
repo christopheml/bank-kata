@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 
-public class PrintableDateFormatter {
+class PrintableDateFormatter {
 
     private static final DateTimeFormatter DATE_TIME_FORMATTER = createFormatter();
 

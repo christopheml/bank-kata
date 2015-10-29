@@ -18,7 +18,7 @@ public class Amount {
         return new Amount(BigDecimal.valueOf(amount));
     }
 
-    public static Amount of(BigDecimal amount) {
+    private static Amount of(BigDecimal amount) {
         return new Amount(amount);
     }
 
@@ -37,10 +37,7 @@ public class Amount {
 
     @Override
     public boolean equals(Object other) {
-        if (!(other instanceof Amount)) {
-            return false;
-        }
-        return value.equals(((Amount) other).getValue());
+        return other instanceof Amount && value.equals(((Amount) other).getValue());
     }
 
 }

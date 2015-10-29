@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class BankStatementTest {
 
-    public static final String STATEMENT_HEADER = "date || credit || debit || balance";
+    private static final String STATEMENT_HEADER = "date || credit || debit || balance";
 
     @Test
     public void given_an_empty_account_when_printing_statement_then_print_only_header() {

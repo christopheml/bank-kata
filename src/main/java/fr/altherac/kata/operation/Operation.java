@@ -10,7 +10,7 @@ public abstract class Operation {
 
     private final LocalDate date;
 
-    public Operation(Amount amount, LocalDate date) {
+    protected Operation(Amount amount, LocalDate date) {
         this.amount = amount;
         this.date = date;
     }
