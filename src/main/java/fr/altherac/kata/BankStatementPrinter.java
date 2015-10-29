@@ -12,9 +12,16 @@ public class BankStatementPrinter implements OperationVisitor {
     private final List<String> printedOutput = new ArrayList<>();
 
     @Override
-    public void visit(Operation operation) {
-        String printableAmount = printableAmount(operation.getAmount());
-        String printed = String.format("%s || %s || || %s", printableDate(operation.getDate()), printableAmount, printableAmount);
+    public void visit(Deposit deposit) {
+        String printableAmount = printableAmount(deposit.getAmount());
+        String printed = String.format("%s || %s || || %s", printableDate(deposit.getDate()), printableAmount, printableAmount);
+        printedOutput.add(printed);
+    }
+
+    @Override
+    public void visit(Withdrawal withdrawal) {
+        String printableAmount = printableAmount(withdrawal.getAmount());
+        String printed = String.format("%s || || %s || -%s", printableDate(withdrawal.getDate()), printableAmount, printableAmount);
         printedOutput.add(printed);
     }
 

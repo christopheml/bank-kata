@@ -12,12 +12,12 @@ public class Account {
     private final List<Operation> operations = new ArrayList<>();
 
     public void deposit(Amount amount, LocalDate date) {
-        operations.add(new Operation(amount, date));
+        operations.add(new Deposit(amount, date));
         balance = balance.add(amount.getValue());
     }
 
     public void withdraw(Amount amount, LocalDate date) {
-        operations.add(new Operation(amount, date));
+        operations.add(new Withdrawal(amount, date));
         balance = balance.subtract(amount.getValue());
     }
 

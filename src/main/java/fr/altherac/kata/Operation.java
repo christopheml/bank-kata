@@ -2,7 +2,7 @@ package fr.altherac.kata;
 
 import java.time.LocalDate;
 
-public class Operation {
+public abstract class Operation {
 
     private final Amount amount;
 
@@ -21,8 +21,6 @@ public class Operation {
         return date;
     }
 
-    public void accept(OperationVisitor visitor) {
-        visitor.visit(this);
-    }
+    public abstract void accept(OperationVisitor visitor);
 
 }

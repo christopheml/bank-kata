@@ -2,6 +2,8 @@ package fr.altherac.kata;
 
 public interface OperationVisitor {
 
-    void visit(Operation operation);
+    void visit(Deposit deposit);
+
+    void visit(Withdrawal withdrawal);
 
 }
