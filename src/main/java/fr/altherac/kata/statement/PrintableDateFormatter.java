@@ -9,7 +9,7 @@ public class PrintableDateFormatter {
     private static final DateTimeFormatter DATE_TIME_FORMATTER = createFormatter();
 
     private static DateTimeFormatter createFormatter() {
-        return new DateTimeFormatterBuilder().appendPattern("d/M/y").toFormatter();
+        return new DateTimeFormatterBuilder().appendPattern("dd/MM/y").toFormatter();
     }
 
     public String printableDate(LocalDate date) {
