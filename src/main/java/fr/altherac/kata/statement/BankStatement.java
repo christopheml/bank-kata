@@ -19,7 +19,6 @@ public class BankStatement {
 
         BankStatementPrinter printer = new BankStatementPrinter();
         printer.print(account.getOperations());
-
         statements.addAll(printer.getPrintedOutput());
 
         return statements;
