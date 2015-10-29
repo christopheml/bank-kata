@@ -22,4 +22,12 @@ public class Amount {
         return new Amount(amount);
     }
 
+    public Amount add(Amount amount) {
+        return Amount.of(getValue().add(amount.getValue()));
+    }
+
+    public Amount subtract(Amount amount) {
+        return Amount.of(getValue().subtract(amount.getValue()));
+    }
+
 }

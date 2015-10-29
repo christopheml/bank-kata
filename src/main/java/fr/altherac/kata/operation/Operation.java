@@ -25,4 +25,5 @@ public abstract class Operation {
 
     public abstract void accept(OperationVisitor visitor);
 
+    public abstract Amount applyTo(Amount balance);
 }

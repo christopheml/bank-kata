@@ -14,4 +14,8 @@ public class Deposit extends Operation {
         visitor.visit(this);
     }
 
+    @Override
+    public Amount applyTo(Amount balance) {
+        return balance.add(getAmount());
+    }
 }

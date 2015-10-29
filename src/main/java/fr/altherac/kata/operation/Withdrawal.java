@@ -13,4 +13,9 @@ public class Withdrawal extends Operation {
     public void accept(OperationVisitor visitor) {
         visitor.visit(this);
     }
+
+    @Override
+    public Amount applyTo(Amount balance) {
+        return balance.subtract(getAmount());
+    }
 }

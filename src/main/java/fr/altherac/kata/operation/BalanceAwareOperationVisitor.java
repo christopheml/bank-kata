@@ -2,24 +2,22 @@ package fr.altherac.kata.operation;
 
 import fr.altherac.kata.Amount;
 
-import java.math.BigDecimal;
-
 public class BalanceAwareOperationVisitor implements OperationVisitor {
 
-    private BigDecimal balance = BigDecimal.ZERO;
+    private Amount balance = Amount.of(0);
 
     @Override
     public void visit(Deposit deposit) {
-        balance = balance.add(deposit.getAmount().getValue());
+        balance = deposit.applyTo(balance);
     }
 
     @Override
     public void visit(Withdrawal withdrawal) {
-        balance = balance.subtract(withdrawal.getAmount().getValue());
+        balance = withdrawal.applyTo(balance);
     }
 
     public Amount getBalance() {
-        return Amount.of(balance);
+        return balance;
     }
 
 }

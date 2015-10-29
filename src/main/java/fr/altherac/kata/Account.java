@@ -4,30 +4,32 @@ import fr.altherac.kata.operation.Deposit;
 import fr.altherac.kata.operation.Operations;
 import fr.altherac.kata.operation.Withdrawal;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Account {
 
-    private BigDecimal balance = BigDecimal.ZERO;
+    private Amount balance = Amount.of(0);
 
     private final Operations operations = new Operations();
 
     public void deposit(Amount amount, LocalDate date) {
-        operations.add(new Deposit(amount, date));
-        balance = balance.add(amount.getValue());
+        Deposit deposit = new Deposit(amount, date);
+        balance = deposit.applyTo(balance);
+        operations.add(deposit);
     }
 
     public void withdraw(Amount amount, LocalDate date) {
-        operations.add(new Withdrawal(amount, date));
-        balance = balance.subtract(amount.getValue());
+        Withdrawal withdrawal = new Withdrawal(amount, date);
+        balance = withdrawal.applyTo(balance);
+        operations.add(withdrawal);
     }
 
-    public BigDecimal getBalance() {
+    public Amount getBalance() {
         return balance;
     }
 
     public Operations getOperations() {
         return operations;
     }
+
 }
