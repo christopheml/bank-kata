@@ -1,5 +1,9 @@
 package fr.altherac.kata;
 
+import fr.altherac.kata.operation.Deposit;
+import fr.altherac.kata.operation.Operations;
+import fr.altherac.kata.operation.Withdrawal;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

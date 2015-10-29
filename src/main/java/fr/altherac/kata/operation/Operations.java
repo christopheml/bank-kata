@@ -1,4 +1,4 @@
-package fr.altherac.kata;
+package fr.altherac.kata.operation;
 
 import java.util.ArrayList;
 import java.util.Iterator;

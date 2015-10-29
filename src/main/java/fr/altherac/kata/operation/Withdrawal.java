@@ -1,4 +1,6 @@
-package fr.altherac.kata;
+package fr.altherac.kata.operation;
+
+import fr.altherac.kata.Amount;
 
 import java.time.LocalDate;
 

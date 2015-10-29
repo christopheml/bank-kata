@@ -1,4 +1,6 @@
-package fr.altherac.kata;
+package fr.altherac.kata.statement;
+
+import fr.altherac.kata.Amount;
 
 import java.util.Locale;
 

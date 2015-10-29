@@ -1,4 +1,4 @@
-package fr.altherac.kata;
+package fr.altherac.kata.statement;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

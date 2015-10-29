@@ -1,4 +1,6 @@
-package fr.altherac.kata;
+package fr.altherac.kata.statement;
+
+import fr.altherac.kata.operation.*;
 
 import java.util.ArrayList;
 import java.util.List;

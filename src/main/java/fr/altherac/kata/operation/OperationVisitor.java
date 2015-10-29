@@ -1,4 +1,4 @@
-package fr.altherac.kata;
+package fr.altherac.kata.operation;
 
 public interface OperationVisitor {
 
