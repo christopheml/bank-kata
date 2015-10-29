@@ -2,7 +2,6 @@ package fr.altherac.kata;
 
 import org.junit.Test;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -39,7 +38,7 @@ public class AccountTest  {
     }
 
     private void then_balance_should_be(Account account, int expectedBalance) {
-        assertThat(account.getBalance()).isEqualTo(BigDecimal.valueOf(expectedBalance));
+        assertThat(account.getBalance()).isEqualTo(Amount.of(expectedBalance));
     }
 
     private Account given_a_new_bank_account() {

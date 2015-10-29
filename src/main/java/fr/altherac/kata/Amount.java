@@ -30,4 +30,17 @@ public class Amount {
         return Amount.of(getValue().subtract(amount.getValue()));
     }
 
+    @Override
+    public int hashCode() {
+        return value.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof Amount)) {
+            return false;
+        }
+        return value.equals(((Amount) other).getValue());
+    }
+
 }
