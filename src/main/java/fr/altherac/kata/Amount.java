@@ -18,16 +18,12 @@ public class Amount {
         return new Amount(BigDecimal.valueOf(amount));
     }
 
-    private static Amount of(BigDecimal amount) {
-        return new Amount(amount);
-    }
-
     public Amount add(Amount amount) {
-        return Amount.of(getValue().add(amount.getValue()));
+        return new Amount(getValue().add(amount.getValue()));
     }
 
     public Amount subtract(Amount amount) {
-        return Amount.of(getValue().subtract(amount.getValue()));
+        return new Amount(getValue().subtract(amount.getValue()));
     }
 
     @Override
